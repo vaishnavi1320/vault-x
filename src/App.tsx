@@ -57,11 +57,43 @@ export default function App() {
     <div className="min-h-screen bg-slate-950 text-white p-4 md:p-8 font-sans">
       <div className="max-w-4xl mx-auto">
         
-        {/* Header */}
+       {/* Header */}
         <header className="flex justify-between items-center mb-10">
-          <h1 className="text-2xl font-black text-blue-500 tracking-tighter">VAULT-X</h1>
-          <div className="bg-orange-500/10 border border-orange-500/30 text-orange-400 px-4 py-1 rounded-full text-xs font-mono">
-            LIVE BTC: ${typeof btcPrice === 'number' ? btcPrice.toLocaleString() : btcPrice}
+          <div className="flex items-center gap-3">
+            <div className="relative flex items-center justify-center w-10 h-10">
+              {/* Background Glow Effect */}
+              <div className="absolute inset-0 bg-blue-500/20 blur-xl rounded-full"></div>
+              
+              {/* Custom SVG Logo */}
+              <svg 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                className="w-full h-full text-blue-500 drop-shadow-lg"
+                stroke="currentColor" 
+                strokeWidth="2" 
+                strokeLinecap="round" 
+                strokeLinejoin="round"
+              >
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                <path d="M9.5 9.5l5 5M14.5 9.5l-5 5" className="text-white" strokeWidth="2.5" />
+              </svg>
+            </div>
+            
+            <div className="flex flex-col leading-none">
+              <span className="text-2xl font-black tracking-tighter text-white">
+                VAULT<span className="text-blue-500">-X</span>
+              </span>
+              <span className="text-[10px] text-gray-500 font-mono tracking-widest uppercase">Digital Assets</span>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 bg-orange-500/10 border border-orange-500/30 text-orange-400 px-4 py-1.5 rounded-full text-xs font-mono shadow-[0_0_15px_rgba(249,115,22,0.1)]">
+            {/* Pulsing Dot */}
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-orange-500"></span>
+            </span>
+            BTC: ${typeof btcPrice === 'number' ? btcPrice.toLocaleString() : btcPrice}
           </div>
         </header>
 
